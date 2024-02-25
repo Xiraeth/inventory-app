@@ -11,15 +11,15 @@ block content
     div.form-group.mb-2
       label.fs-5(for="price") Price: 
       div.col.col-md-6
-        input#price.form-control.w-100.w-md-50(type="number" step="any" placeholder="Name of product" autocomplete="off" name="price" required value=(undefined===product ? '' : product.price))
+        input#price.form-control.w-100.w-md-50(type="number" step="any" placeholder="Price of product" autocomplete="off" name="price" required value=(undefined===product ? '' : product.price))
     div.form-group.mb-2
       label.fs-5(for="description") Description: 
       div.col.col-md-6
-        input#description.form-control.w-100.w-md-50(type="text" placeholder="Name of product" autocomplete="off" name="description" required value=(undefined===product ? '' : product.description))
+        input#description.form-control.w-100.w-md-50(type="text" placeholder="Description of product" autocomplete="off" name="description" required value=(undefined===product ? '' : product.description))
     div.form-group.mb-2
       label.fs-5(for="numberInStock") Number in stock: 
       div.col.col-md-6
-        input#numberInStock.form-control.w-100.w-md-50(type="number" placeholder="Name of product" autocomplete="off" name="numberInStock" required value=(undefined===product ? '' : product.numberInStock))
+        input#numberInStock.form-control.w-100.w-md-50(type="number" placeholder="Number in Stock" autocomplete="off" name="numberInStock" required value=(undefined===product ? '' : product.numberInStock))
     div.form-group.mb-2
       label.fs-5(for="category") Category: 
       div.col.col-md-6

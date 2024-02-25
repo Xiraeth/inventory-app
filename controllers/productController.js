@@ -5,8 +5,8 @@ const { body, validationResult } = require("express-validator");
 
 exports.index = asyncHandler(async (req, res, next) => {
   const [numberOfProducts, numberOfCategories] = await Promise.all([
-    Category.countDocuments({}).exec(),
     Product.countDocuments({}).exec(),
+    Category.countDocuments({}).exec(),
   ]);
 
   res.render("index", {
