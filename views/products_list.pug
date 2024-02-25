@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  if products_list.length 
+    p.fs-3 The store sells the following products: 
+    each product in products_list 
+      ul.my-0
+        li.my-0
+          a.itemLink.fs-4(href=product.url) #{product.name}
+
+          
+

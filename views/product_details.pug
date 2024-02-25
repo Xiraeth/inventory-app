@@ -1,0 +1,21 @@
+extends layout 
+
+block content 
+  h1= title
+  if product
+    h3.yellow.mb-0= product.name
+    p.fs-4.mt-0.text-muted(style="font-style: italic;")= product.description
+    p.fs-4 Price: #{product.price}$
+    p.fs-4 Number of items currently in stock: #{product.numberInStock}
+    p.fs-4 Category: 
+      a.itemLink(href=product.category.url) #{product.category.name}
+  
+  else 
+    p The product could not be found in the registry :/
+
+  hr
+  p 
+    a.deleteLink(href="/home/product/" + product._id + "/delete") Delete this product 
+  p 
+    a.editLink(href="/home/product/" + product._id + "/update") Edit this product
+

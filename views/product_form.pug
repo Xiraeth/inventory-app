@@ -1,0 +1,41 @@
+extends layout 
+
+block content
+  h1= title
+
+  form(method="POST")
+    div.form-group.mb-2
+      label.fs-5(for="name") Name: 
+      div.col.col-md-6
+       input#name.form-control.w-100(type="text" placeholder="Name of product" name="name" autocomplete="off" required value=(undefined===product ? '' : product.name))
+    div.form-group.mb-2
+      label.fs-5(for="price") Price: 
+      div.col.col-md-6
+        input#price.form-control.w-100.w-md-50(type="number" step="any" placeholder="Name of product" autocomplete="off" name="price" required value=(undefined===product ? '' : product.price))
+    div.form-group.mb-2
+      label.fs-5(for="description") Description: 
+      div.col.col-md-6
+        input#description.form-control.w-100.w-md-50(type="text" placeholder="Name of product" autocomplete="off" name="description" required value=(undefined===product ? '' : product.description))
+    div.form-group.mb-2
+      label.fs-5(for="numberInStock") Number in stock: 
+      div.col.col-md-6
+        input#numberInStock.form-control.w-100.w-md-50(type="number" placeholder="Name of product" autocomplete="off" name="numberInStock" required value=(undefined===product ? '' : product.numberInStock))
+    div.form-group.mb-2
+      label.fs-5(for="category") Category: 
+      div.col.col-md-6
+        select#category.form-control(required name="category")
+          option(value='') --Select a category--
+            each category in categories
+              if product 
+                if category._id.toString()===product.category._id.toString()
+                  option(value=category._id selected) #{category.name}
+                else
+                  option(value=category._id) #{category.name}
+              else 
+                option(value=category._id) #{category.name}
+    button.btn.btn-primary(type='submit') Submit
+
+    if errors
+      ul
+        for error in errors
+          li!= error.msg

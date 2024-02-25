@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  if categories_list.length 
+    p.fs-3 The store has the following categories: 
+    ul 
+      each category in categories_list 
+        li 
+          a.itemLink.fs-4(href=category.url) #{category.name}
+  else 
+    p Under construction
+    
+

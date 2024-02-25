@@ -1,0 +1,122 @@
+:root {
+  --item-link-color: rgb(241, 245, 7);
+  --item-hover-color: rgb(219, 221, 67);
+  --body-bg: #308b9b;
+  --item-bg: #3d9cad;
+}
+
+* {
+  color: white;
+}
+
+option {
+  color: black;
+}
+
+body {
+  background: var(--body-bg);
+  height: 100vh;
+  overflow: hidden;
+}
+
+#navbar {
+  box-shadow: 1px 0 6px 3px rgba(0, 0, 0, 0.4);
+  /* background: rgb(187, 13, 109); */
+  background-image: linear-gradient(
+    to right,
+    rgb(78, 14, 83),
+    rgb(146, 17, 118),
+    rgb(151, 21, 123),
+    rgb(204, 26, 124)
+  );
+}
+
+#navbar a {
+  text-wrap: nowrap;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.yellow {
+  color: var(--item-link-color);
+}
+
+.deleteLink {
+  color: red;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.1s ease;
+  text-shadow: -1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.red {
+  color: red;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: -1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+li,
+label {
+  text-shadow: -1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.deleteLink:hover {
+  color: rgb(255, 89, 89);
+}
+
+.editLink {
+  color: rgb(16, 219, 118);
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.1s ease;
+  text-shadow: -1px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.editLink:hover {
+  color: rgb(66, 236, 151);
+}
+
+.navLink {
+  color: black;
+  /* background-color: #308b9b; */
+  border-bottom: 1px solid black;
+  transition: all 0.1s ease;
+}
+
+.navLink:hover {
+  background-color: rgba(218, 60, 160, 0.4);
+}
+
+.homeDiv {
+  padding-top: 40vh;
+}
+
+.itemLink {
+  color: var(--item-link-color);
+  font-size: 1.2rem;
+  transition: all 0.15s ease;
+}
+
+.itemLink:hover {
+  color: var(--item-hover-color);
+}
+
+.itemContainer {
+  padding: 15px;
+  background-color: var(--item-bg);
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.desc {
+  max-width: 35ch;
+}

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  div.mx-auto.my-auto.homeDiv
+    h2.text-center This is an inventory management app. It holds information about products and their categories.
+    h3.text-center There  
+      if num_products === 1
+        | is 
+      else
+        | are 
+      | currently 
+      span.text-warning #{num_products} 
+      if num_products === 1
+        | product 
+      else
+        | products 
+      |in the store and 
+      span.text-warning #{num_categories} 
+      if num_categories === 1
+        | category.
+      else
+        | categories.

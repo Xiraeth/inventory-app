@@ -1,0 +1,20 @@
+extends layout 
+
+block content 
+  h1= title 
+  if products.length 
+    div 
+      p.fs-3.red Warning! 
+        span.textShadow You need to delete the following products before deleting 
+        span.text-warning.textShadow(style="font-style: italic") #{category.name}:
+      ul 
+        each product in products 
+          li 
+            a.itemLink.textShadow(href=product.url)= product.name 
+  else 
+    p.fs-4 Are you sure you want to delete this category?
+
+    form(method="POST")
+      div.form-group 
+        input#categoryID.form-control(type="hidden" name="categoryID" value=category._id)
+        button.btn.btn-danger(type="submit") Delete

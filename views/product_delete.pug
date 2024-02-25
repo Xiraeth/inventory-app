@@ -1,0 +1,10 @@
+extends layout 
+
+block content 
+  h1= title 
+  p.fs-4 Remove this product from the store?
+
+  form(method="POST")
+    div.form-group
+      input#productID.form-control(type="hidden" name="productID" value=product._id)
+      button.btn.btn-danger(type="submit") Delete

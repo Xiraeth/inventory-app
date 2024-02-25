@@ -1,0 +1,19 @@
+extends layout 
+
+block content 
+  h1= title 
+  form(method="POST")
+    div.form-group.mb-2
+      label.fs-5(for="name") Name:
+      div.col.col-md-6 
+        input#name.form-control.w-100(type='text' required placeholder='Name of category' autocomplete="off" name="name" value=(undefined===category ? '' : category.name))
+    div.form-group.mb-2
+      label.fs-5(for="description") Description:
+      div.col.col-md-6 
+        input#description.form-control.w-100(type='text' required placeholder='Description of category' autocomplete="off" name="description" value=(undefined===category ? '' : category.description))
+    button.btn.btn-primary(type="submit") Submit
+
+    if errors
+      ul
+        for error in errors
+          li!= error.msg

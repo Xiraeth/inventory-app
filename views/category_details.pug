@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+  h1= title
+  if category
+    h3.yellow.mb-0 #{category.name } 
+    p.fs-4.mt-0.text-muted(style="font-style: italic")= category.description
+    p.fs-4 The following products are listed under this category:
+    ul 
+      each product in products
+        li 
+          a.itemLink(href=product.url)= product.name
+    
+    hr
+    p 
+      a.deleteLink(href="/home/category/" + category._id + "/delete") Delete this category 
+    p 
+      a.editLink(href="/home/category/" + category._id + "/update") Edit this category
